@@ -34,10 +34,14 @@ CREATE TABLE tab_buyers
     id          INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     people_id   INT NOT NULL,
     discount_id INT NOT NULL,
-    FOREIGN KEY (people_id) REFERENCES tab_people (id)
-        ON DELETE NO ACTION ON UPDATE NO ACTION,
-    FOREIGN KEY (discount_id) REFERENCES tab_discounts (id)
-        ON DELETE NO ACTION ON UPDATE NO ACTION
+
+    FOREIGN KEY (people_id) 
+        REFERENCES tab_people (id) ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
+    FOREIGN KEY (discount_id)
+        REFERENCES tab_discounts (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
 );
 
 CREATE TABLE tab_positions
